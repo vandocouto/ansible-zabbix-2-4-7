@@ -24,5 +24,4 @@ dir_zabbix: 'zabbix-2.4.7'
 
 
 Mais informações visite o blog:
-http://tutoriaisgnulinux.com
-
+http://tutoriaisgnulinux.com/?p=15170
