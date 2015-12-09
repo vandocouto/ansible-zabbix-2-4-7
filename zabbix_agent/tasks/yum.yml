@@ -1,0 +1,11 @@
+---
+- name: "Instalacao dos pacotes necessarios para o Zabbix Agent - YUM"
+  yum: name={{item}} state=latest
+  with_items:
+   - wget
+   - tar
+   - make
+   - gcc
+   - chkconfig
+  tags: yum
+

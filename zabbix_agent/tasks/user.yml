@@ -1,0 +1,5 @@
+---
+- name: "Criando o usuario zabbix"
+  action: user name=zabbix shell=/bin/nologin home=/home/zabbix/
+  tags: user
+

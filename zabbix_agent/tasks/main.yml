@@ -1,0 +1,19 @@
+---
+# tasks file for zabbix_agent
+- include: download-zabbix.yml
+- include: apt.yml 
+  when: ansible_os_family == 'Debian'
+- include: yum.yml
+  when: ansible_os_family == 'RedHat'
+- include: untar.yml
+- include: user.yml
+- include: compilacao.yml
+- include: permissionamento.yml
+- include: conf.yml
+- include: debian.yml 
+  when: ansible_os_family == 'Debian'  
+  tags: start_debian
+- include: centos.yml
+  when: ansible_os_family == 'RedHat'
+  tags: start_centos
+

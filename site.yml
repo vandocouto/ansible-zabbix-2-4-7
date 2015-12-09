@@ -1,0 +1,4 @@
+- hosts: zabbix_agent
+  roles:
+  - yaegashi.blockinfile
+  - zabbix_agent
