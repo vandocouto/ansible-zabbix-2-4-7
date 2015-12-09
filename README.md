@@ -6,7 +6,7 @@ Para instalar, execute o comando abaixo:
 
 $ sudo ansible-galaxy install yaegashi.blockinfile
 
-Altera os valores das variáveis conforme sua necessidade:
+Altere os valores das variáveis conforme sua necessidade:
 
 zabbix_agent/vars/main.yml
 
