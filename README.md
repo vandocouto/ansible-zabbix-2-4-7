@@ -1,4 +1,4 @@
-# Orquestração do Zabb
+# Orquestração do Zabbix 2.4.7 
 
 Necessário a instalação do módulo: blockinfile
 
