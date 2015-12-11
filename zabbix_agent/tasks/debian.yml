@@ -1,12 +1,12 @@
 ---
-- name: "Iniciando o Zabbix Agent"
+- name: "Debian - Iniciando o Zabbix Agent"
   set_fact: zabbix_agent_service_name=zabbix-agent
 
 
-- name: "Criando o script de inicializacao"
+- name: "Debian - Criando o script de inicializacao"
   template: src={{dir_dest}}/{{dir_zabbix}}/misc/init.d/debian/zabbix-agent dest=/etc/init.d/zabbix-agent owner=root group=root mode=0755
 
-- name: "Ajustando o script de inicializacao zabbix-agent"
+- name: "Debian - Ajustando o script de inicializacao zabbix-agent"
   blockinfile: 
    dest: /etc/init.d/zabbix-agent
    insertbefore: "NAME=zabbix_agentd"
@@ -22,7 +22,7 @@
     # Description: Provide limited super user privileges to specific users. 
     ### END INIT INFO
 
-- name: "start"
+- name: "Debian - Iniciando o zabbix-agent"
   service:
    name: "{{zabbix_agent_service_name}}"
    state: running

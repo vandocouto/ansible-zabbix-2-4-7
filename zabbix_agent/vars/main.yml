@@ -1,6 +1,6 @@
 ---
 # vars file for zabbix_agent
-zabbix_server: 'zabbix.tgl.com'
+zabbix_server: 'monitoramento.sinestec.com.br'
 url: 'http://downloads.sourceforge.net/project/zabbix/ZABBIX%20Latest%20Stable/2.4.7/zabbix-2.4.7.tar.gz'
 tar_zabbix: 'zabbix-2.4.7.tar.gz'
 dir_dest: '/opt'
