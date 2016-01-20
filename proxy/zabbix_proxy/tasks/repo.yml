@@ -1,0 +1,5 @@
+---
+- name: "Ajustando a interface de rede ifcfg-eno33559296"
+  template:
+   src: zabbix.repo
+   dest: /etc/yum.repos.d/zabbix.repo

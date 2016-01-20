@@ -1,0 +1,5 @@
+---
+- name: "Extraindo o arquivo zabbix"
+  unarchive: src={{dir_dest}}/{{tar_zabbix}}  dest={{dir_dest}}
+  tags: untar
+

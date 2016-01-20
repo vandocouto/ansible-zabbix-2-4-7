@@ -1,0 +1,12 @@
+---
+# tasks file for zabbix_proxy
+- include: repo.yml
+  tags: repo
+- include: yum.yml
+  tags: yum
+- include: mariadb.yml
+  tags: mariadb
+- include: conf.yml
+  tags: conf
+- include: reboot.yml
+  tags: reboot

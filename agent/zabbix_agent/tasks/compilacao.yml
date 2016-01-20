@@ -1,0 +1,9 @@
+---
+- name: "Compilando o Zabbix Agent 2.4.5"
+  command: 'chdir={{dir_dest}}/{{dir_zabbix}} {{item}}'
+  with_items:
+   - ./configure --enable-agent
+   - make
+   - make install
+  tags: compilacao
+

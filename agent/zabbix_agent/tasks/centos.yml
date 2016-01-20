@@ -1,0 +1,16 @@
+---
+- name: "CentOS - Iniciando o Zabbix Agent"
+  set_fact: zabbix_agent_service_name=zabbix-agent
+
+
+- name: "CentOS - Criando o script de inicializacao"
+  template: src={{dir_dest}}/{{dir_zabbix}}/misc/init.d/fedora/core/zabbix_agentd dest=/etc/init.d/zabbix-agent owner=root group=root mode=0755
+
+- name: "CentOS - Iniciando o zabbix-agent"
+  service:
+   name: "{{zabbix_agent_service_name}}"
+   state: running
+   enabled: yes
+  notify: restart zabbix agent
+
+

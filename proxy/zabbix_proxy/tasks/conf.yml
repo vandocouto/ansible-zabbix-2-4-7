@@ -1,0 +1,12 @@
+---
+- name: "Ajustando o arquivo de configuracao zabbix_proxy.conf"
+  lineinfile:
+   dest: /etc/zabbix/zabbix_proxy.conf
+   regexp: "{{ item.regexp }}"
+   line: "{{ item.line }}"
+  with_items:
+  - { regexp: 'Server=127.0.0.1', line: 'Server={{zabbix_server}}' }
+  - { regexp: '# DBHost=localhost'  , line: 'DBHost=localhost' }
+  - { regexp: 'DBUser=zabbix'  , line: 'DBUser=zabbix_proxy' }
+  - { regexp: '# DBPassword='  , line: 'DBPassword=zabbix_proxy' }
+  - { regexp: 'Hostname=Zabbix proxy'  , line: 'Hostname={{ansible_hostname}}' }

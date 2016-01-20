@@ -1,0 +1,4 @@
+---
+# vars file for zabbix_proxy
+zabbix_server: 'monitoramento.sinestec.com.br'
+

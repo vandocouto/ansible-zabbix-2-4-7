@@ -1,0 +1,8 @@
+---
+- name: "Ajustando o permissionamento dos arquivos do Zabbix Agent"
+  file: path=/usr/local/etc/zabbix_agentd.conf.d      owner=zabbix group=zabbix mode=u+rw,g=rw,o=r recurse=yes
+  file: path=/usr/local/etc/zabbix_agent.conf.d       owner=zabbix group=zabbix mode=u+rw,g=rw,o=r recurse=yes
+  file: path=/usr/local/etc/zabbix_agent.conf         owner=zabbix group=zabbix mode=u+rw,go=r
+  file: path=/usr/local/etc/zabbix_agentd.conf        owner=zabbix group=zabbix mode=u+rw,go=r
+  tags: permissionamento
+

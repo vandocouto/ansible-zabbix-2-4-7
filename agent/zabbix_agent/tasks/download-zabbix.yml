@@ -1,0 +1,6 @@
+---
+- name: "Download do Zabbix Agent"
+  get_url: url={{url}} dest={{dir_dest}}
+  # changed_when: true
+  tags: download_zabbix_2_4_7
+

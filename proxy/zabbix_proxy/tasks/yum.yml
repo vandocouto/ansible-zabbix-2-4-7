@@ -1,0 +1,23 @@
+---
+- name: "Instalacao do epel-release para CentOS - YUM"
+  yum: name=epel-release state=latest
+
+- name: "Upgrade CentOS - YUM"
+  yum: name=* state=latest
+
+- name: "Instalacao dos pacotes necessarios para o Zabbix Proxy - YUM"
+  yum: name={{item}} state=latest
+  with_items:
+   - zabbix-proxy 
+   - zabbix-proxy-mysql 
+   - mariadb-server
+   - MySQL-python
+
+- name: "Iniciando o MariaDB"
+  service: name=mariadb state=started
+
+- name: "Habilitando o Zabbix Proxy"
+  service: name={{item}} enabled=yes
+  with_items:
+   - mariadb
+   - zabbix-proxy

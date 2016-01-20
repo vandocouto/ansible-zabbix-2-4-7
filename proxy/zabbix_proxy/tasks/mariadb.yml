@@ -1,0 +1,12 @@
+---
+- name: "Criando a database zabbix_proxy"
+  mysql_db: name=zabbix_proxy state=present
+
+- name: "Update mysql root password for all root accounts"
+  mysql_user: name=zabbix_proxy priv=zabbix_proxy.*:ALL host=localhost password=zabbix_proxy
+
+- name: "Movendo o dump"
+  copy: src=schema.sql dest=/tmp/schema.sql 
+
+- name: "Restore dump"
+  mysql_db: name=zabbix_proxy state=import target=/tmp/schema.sql
