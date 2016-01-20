@@ -1,5 +1,5 @@
 ---
-- name: "Ajustando a interface de rede ifcfg-eno33559296"
+- name: "Criando o arquivo zabbix.repo"
   template:
    src: zabbix.repo
    dest: /etc/yum.repos.d/zabbix.repo
